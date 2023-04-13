@@ -1,0 +1,17 @@
+Generar fichero de texto que permita almacenar la informacion de los alumnos de una clase.
+Sabiendo que de cada alumno se guarda n_expediente entero(4 digitos), nombre (cadena) y las notas de sus asignaturas (Tienen 3 asignaturas).
+El formato de nuestro fichero sera:
+NUMERO DE EXPEDIENTE:numero que sea
+NOMBRE: nombre que sea
+NOTAS:
+	nota1
+	nota2
+	nota3
+
+Una vez generado el fichero permitir mediante un menu las siguientes opciones: (Todo esto se hace a traves del fichero generado)
+1.- Añadir un nuevo alumno al fichero.
+2.- Calcular la media de cada alumno. 
+3.- Generar otro fichero de texto con los nombres de todos los alumnos sin que haya ninguno repetido.
+4.- Salir.
+
+No puede haber dos alumnos con el mismo numero de expediente.
