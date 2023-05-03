@@ -1,0 +1,63 @@
+####################################
+###  ACCESO A FICHEROS DE DATOS  ###
+####################################
+
+Trabajaremos con 3 tipos de ficheros:
+- Ficheros de texto: Cada elemento es una cadena de caracteres. En estos la información es legible. Su extensión es .txt
+- Ficheros binarios: Almacena información de cualquier tipo pero teniendo en cuenta que esta información se almacena en binario.
+    La información no es legible al usuario, sino que para poder acceder a esa información es necesario conocer el formato del ficheros
+    (saber cómo va a estar estructurado el formato). Su extensión es .dat
+- Ficheros de objetos: Cada uno de sus elementos va a ser un objeto. Realmente estos ficheros tampoco son legibles al usuario, es 
+    necesario conocer la estructura con la que se ha creado para poder tener acceso a la información. Su extension es .odj 
+
+Siempre que un programa trabaje con un archivo/fichero es necesario realizar 3 operaciones:
+1. Abrir el fichero.
+2. Tratar el fichero (procesar la información del fichero).
+3. Cerrar el fichero.
+
+** A TENER EN CUENTA: **
+A la hora de abrir el fichero tengo que especificar si es para leer o para escribir. 
+En un mismo programa puedo abrirlo y cerrarlo tantas veces como quiera. 
+El acceso a la información de un fichero, en principio va a ser acceso secuencial. 
+Cuando quiera hacer referencia a un fichero existe la clase File que hace referencia a un fichero/archivo. 
+Ej: File *nombreObjeto* = new File("RUTA"); //Esto tiene varios constructores diferentes. Este objeto sirve para cualquier tipo de fichero.  
+Para comprobar si existe el fichero hacemos: 
+# *nombreObjeto*.exists(); 
+
+#########################
+### FICHEROS DE TEXTO ###
+#########################
+
+1) Abrir el fichero 
+    - Abrir para escritura 
+        FileWriter *nombreFichero* = new FileWriter("ruta" o el Objeto File, true/false); // true: Es que estoy abriendo el fichero para escribir al final del mismo / false: Estoy abriendo el fichero de texto para escribir desde el principio y machaca todo 
+    - Abrir para lectura 
+        FileReader *nombreFichero* = new FileReader(File o ruta); // SINO EXISTE EL FICHERO EL PROGRAMA FALLA 
+
+2) Tratar el fichero 
+    - Escribir 
+        Cada vez que se escribe se escribe una linea de texto y es necesario definir un objeto escritor. 
+        PrintWriter nombreObjeto = new PrintWriter(objeto FileWriter); (Esno no escribe sino que es el instrumento que vamos a usar para escribir). Para cada vez que quiera escribir hacemos: nombreObjeto.println("texto a añadir"); 
+    - Leer
+        Hay que definir el objeto lector BufferedReader nombreObjeto = new BufferedReader(objeto FileReader); (Este no lee, sino que es el instrumento que vamos a usar para leer). Para leer hacemos: nombreObjeto.readLine();  
+
+3) Cerrar el fichero 
+    - Si he abierto para escribir 
+        Tenemos que cerrar los dos objetos. ObjetoFileWriter.close(); ObjetoPrintWriter.close(); 
+    - Si he abierto para leer 
+        ObjetoFileReader.close(); ObjetoBufferedReader.close(); 
+
+
+################################
+### MODIFICACION DE FICHEROS ###
+################################
+
+Siempre que tengamos que modificar un fichero (esto nos sirve para cualquier tipo de fichero) es necesario utilizar un fichero auxiliar del mismo tipo que queremos modificar. 
+Abro el fichero1 para leer y el auxiliar para escribir.  
+Leo fichero original si no es la línea que quiero modificar la escribo en el fichero, en cambio si es la línea que quiero modificar, cojo y la modifico y la añado al fichero; 
+Una vez que lo hemos acabado de leer y escribir los cierro y con el objeto file lo elimino. 
+# objetoFile.delete(); 
+Ahora para renombrar el fichero:  
+# objetoFile.renameTo("nombreNuevo"); 
+O 
+# objetoFile.renameTo(objectoFile); // Esto extrae el nombre del fichero anterior 
