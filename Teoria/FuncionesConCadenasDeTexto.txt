@@ -1,0 +1,48 @@
+##########################################
+###  FUNCIONES PARA MANEJO DE CADENAS  ###
+##########################################
+
+# int length() -> Determinar el numero de caracteres de la cadena: 
+String cad = "Hola pepito";
+cad.length() -> Devolvera 11
+
+# StringCad toLowerCase() -> Devolver cadena convertida en minusculas:
+String cad = "CADeNa a Convertir en MINUs";
+cad.toLowerCase() -> Devolvera "cadena a convertir en minus"
+
+# StringCad toUpperCase() -> Devovler cadena convertida a mayuscula: 
+String cad = "Esto Es mi Cadena Mayus";
+cad.toUpperCase() -> Devolvera "ESTO ES MI CADENA MAYUS"
+
+# StringVieja concat(String cadNew) -> Concatenar dos cadenas añadiendo la segunda al final de la primera: 
+String cad1 = "Primera parte";
+cad1.concat(", segunda parte") -> Devolvera "Primera parte , segunda parte"
+
+# boolean equals(String cad) -> Comprueba si la cadena pasada es igual a la cadena (esta hace distincion entre mayusculas y minusculas):
+String cad = "cadena principal";
+cad.equals("CadenA Principal"); -> Devolvera false
+cad.equals("cadena principal"); -> Devovlera true
+
+# boolean equalsIgnoreCase(String cad) -> Comprobar si la cadena pasada es igual a la cadena (NO hace distincion entre mayusculas y minusculas):
+String cad = "cadena principal";
+cad.equals("CADENA Principal"); -> Devolvera true
+cad.equals("cadena principal"); -> Devovlera true
+
+# boolean startsWith(String cad) -> Comprobar si la cadena comienza con la cadena cad:
+String cad = "cadena empieza";
+cad.startsWith("cadena"); -> Devolvera true
+cad.startsWith("cadena pay"); -> Devolvera false
+
+# boolean startWitch(String cad, int pos) -> Comprobar si la cadena comienza por cad desde la posicion indicada:
+String cad = "cadena empieza";
+cad.startsWith("cadena", 0); -> Devolvera true
+cad.startsWith("na", 4); -> Devolvera true
+
+# boolean endsWith(String cad) -> Comprobar si la cadena termina con cad:
+String cad = "probando";
+cad.endsWith("ando") -> Devolvera true
+
+
+
+
+
