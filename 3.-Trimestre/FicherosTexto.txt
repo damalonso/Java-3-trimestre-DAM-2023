@@ -55,9 +55,12 @@ Para comprobar si existe el fichero hacemos:
 Siempre que tengamos que modificar un fichero (esto nos sirve para cualquier tipo de fichero) es necesario utilizar un fichero auxiliar del mismo tipo que queremos modificar. 
 Abro el fichero1 para leer y el auxiliar para escribir.  
 Leo fichero original si no es la línea que quiero modificar la escribo en el fichero, en cambio si es la línea que quiero modificar, cojo y la modifico y la añado al fichero; 
-Una vez que lo hemos acabado de leer y escribir los cierro y con el objeto file lo elimino. 
-# objetoFile.delete(); 
-Ahora para renombrar el fichero:  
-# objetoFile.renameTo("nombreNuevo"); 
-O 
-# objetoFile.renameTo(objectoFile); // Esto extrae el nombre del fichero anterior 
+
+#Una vez que lo hemos acabado de leer y escribir los cierro y con el objeto file lo elimino. 
+ObjetoFile.delete(); // Eliminamos el fichero
+
+# Ahora para renombrar el fichero:  
+objetoFile.renameTo("nombreNuevo"); // Renombramos con el nombre indicado.
+objetoFile.renameTo(objectoFile); // Extrae el nombre del fichero anterior para que se llame igual el fichero.
+
+
