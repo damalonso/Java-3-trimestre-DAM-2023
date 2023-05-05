@@ -1,0 +1,29 @@
+# Definimos el objeto fecha:
+Calendar fecha = new GregorianCalendar();
+
+# Definimos el objeto Date que va a contener la fecha que pedimos:
+Date fechaPido = null;
+
+# Definimos el objeto formato para formatear la fecha a como nosotros queramos:
+SimpleDateFormat formato = new SimpleDateFormar("dd-MM-yyyy");
+
+# Definimos la fecha de hoy:
+Date fechaHoy = formato.parse(fecha.get(Calendar.DAY_OF_MOTH)+"-"+(fecha.get(Calendar.MONTH)+1)+"-"+fecha.get(Calendar.YEAR));
+
+# Pedimos la fecha y la validamos, hacemos un try catch para el manejo de errores:
+boolean ok;
+do{
+    try{
+        ok=true;
+        d=pedirNum(1, 31);
+        m=pedirNum(1, 12);
+        a=pedirNum(1900, 2025);
+        fechaPido = formato.parse(d+"-"+m+"-"+a);
+        if(fechaPido.before(fechaHoy))
+        System.out.println("La fecha tiene que ser despues de la fecha de hoy.");
+    }
+    catch (){
+        ok=false;
+        System.out.println("Formato de la fecha erroneo");
+    }
+} while(!ok || fechaPidp.before(fechaHoy));
